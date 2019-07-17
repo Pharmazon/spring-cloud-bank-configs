@@ -1,0 +1,19 @@
+server.port: 8700
+zuul:
+  ignoredServices: '*'
+  routes:
+    clients:
+      path: /client/**
+      serviceId: ClientService
+      stripPrefix: true
+    accounts:
+      path: /account/**
+      serviceId: AccountService
+      stripPrefix: true
+    card-processing:
+      path: /processing/**
+      serviceId: ProcessingService
+      stripPrefix: true
+ribbon.eureka.enabled: true
+eureka.client.registerWithEureka: false
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000

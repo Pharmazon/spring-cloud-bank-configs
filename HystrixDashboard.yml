@@ -1,0 +1,13 @@
+server.port: 8900
+eureka.client.registerWithEureka: false
+turbine:
+  aggregator:
+    clusterConfig: PROCESSINGSERVICE,ZUULSERVER
+  appConfig: ProcessingService,ZuulServer
+  instanceUrlSuffix.default: '/actuator/hystrix.stream'
+
+management.endpoints:
+  health:
+    enabled: true
+    showDetails: true
+  web.exposure.include: '*'
